@@ -54,6 +54,65 @@ header {
     font-family: 'Oswald', sans-serif;
     font-size: 1.125rem;
     text-transform: uppercase;
+    visibility: hidden;
+    height: 0;
+    position: absolute;
+
+}
+
+.nav--visible {
+    visibility: visible;
+    height: auto;
+    position: relative;
+    font-size: 1rem;
+} 
+
+.nav-toggle {
+    cursor: pointer;
+    border: 0;
+    width: 3em;
+    height: 3em;
+    padding: 0em;
+    border-radius: 50%;
+    background: #072A2D;
+    color: white;
+    transition: opacity 250ms ease; 
+    position: absolute;
+    left: 0;
+    top: 30px;
+}
+
+.nav-toggle:focus,
+.nav-toggle:hover {
+    opacity: .75;
+}
+
+.hamburger {
+    width: 50%;
+    position: relative;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+    display: block;
+    margin: 0 auto;
+    height: 3px;
+    background: white;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    width: 100%;
+}
+
+.hamburger::before {
+    transform: translateY(-6px);
+}
+
+.hamburger::after {
+    transform: translateY(3px);
 }
 
 .nav__item {
@@ -100,6 +159,12 @@ header {
     text-decoration: none;
     padding: .25em 0;
 }
+
+.hero__btn:hover,
+.hero__btn:focus {
+    opacity: .75;
+}
+
 
 /*second section*/
 .second-sec {
@@ -211,6 +276,19 @@ header {
 
     .row {
         flex-direction: row;
+    }
+
+    .nav-toggle {
+        display: none;
+    }
+
+    .nav {
+        visibility: visible;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        height: auto;
+        position: relative;
     }
 
     .nav__logo {
